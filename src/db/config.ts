@@ -3,8 +3,6 @@ import { dotenv } from '../utils/env-activate';
 
 dotenv()
 
-console.log(process.env.DATABASE_USERNAME)
-
 const pool = new Pool({
     user: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
