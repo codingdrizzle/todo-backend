@@ -1,14 +1,12 @@
-const { pool } = require('./config');
-import logger from "../utils/logger";
+import logger from '../utils/logger';
+import { prisma } from './prisma'
+
+require('dotenv').config()
 
 const connectDB = async () => {
-    try {
-        const client = await pool.connect();
+    await prisma.$connect().then(() => {
         logger.info(`Connected to PostgreSQL`);
-        client.release();
-    } catch (err) {
-        logger.info(`${err}`);
-    }
+    })
 }
 
-export {connectDB}
+export { connectDB }        

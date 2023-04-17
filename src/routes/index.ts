@@ -2,8 +2,10 @@ import express, { Request, Response } from 'express';
 
 const router = express.Router();
 
-import Authentication from './authentication'
+//import Authentication from './authentication'
+import UserRoutes from './user-routes'
 
-Authentication(router);
+//Authentication(router);
+UserRoutes(router);
 
-module.exports = {router}
+export {router}
